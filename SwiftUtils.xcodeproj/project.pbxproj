@@ -13,6 +13,12 @@
 		38C0F9D51B66176D00737021 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C0F9D41B66176D00737021 /* Images.xcassets */; };
 		38C0F9D81B66176D00737021 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C0F9D61B66176D00737021 /* LaunchScreen.xib */; };
 		38C0F9E41B66176D00737021 /* SwiftUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0F9E31B66176D00737021 /* SwiftUtilsTests.swift */; };
+		3C6150D1BE35BD42EE29908D /* ParseBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C61534DDC1089763ABD41AE /* ParseBinder.swift */; };
+		3C6151A42DC8D201D351B714 /* ParseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6159B16E88624ADF5C0366 /* ParseUtils.swift */; };
+		3C6158CD13875ECA85E714D9 /* RequiredValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C615080EDFE74DC418D9C35 /* RequiredValidator.swift */; };
+		3C6159ACAD0807F5F210B4D6 /* BaseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C615D6DA5772C11FC441137 /* BaseValidator.swift */; };
+		3C615EF4A11A3465EF6CFB8D /* RegExValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C615EC0D69EDD2F63968343 /* RegExValidator.swift */; };
+		E13CA98D42844417E54EA4AA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B710A7705944AFB67FEED414 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03B3B7F2D2E152376D3E716A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		38C0F9C81B66176D00737021 /* SwiftUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C0F9CC1B66176D00737021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38C0F9CD1B66176D00737021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +43,13 @@
 		38C0F9DD1B66176D00737021 /* SwiftUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C0F9E21B66176D00737021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38C0F9E31B66176D00737021 /* SwiftUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUtilsTests.swift; sourceTree = "<group>"; };
+		3C615080EDFE74DC418D9C35 /* RequiredValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequiredValidator.swift; sourceTree = "<group>"; };
+		3C61534DDC1089763ABD41AE /* ParseBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseBinder.swift; sourceTree = "<group>"; };
+		3C6159B16E88624ADF5C0366 /* ParseUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUtils.swift; sourceTree = "<group>"; };
+		3C615D6DA5772C11FC441137 /* BaseValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseValidator.swift; sourceTree = "<group>"; };
+		3C615EC0D69EDD2F63968343 /* RegExValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegExValidator.swift; sourceTree = "<group>"; };
+		6AB0C861BECB8F4A3AA0870F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B710A7705944AFB67FEED414 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13CA98D42844417E54EA4AA /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +77,8 @@
 				38C0F9CA1B66176D00737021 /* SwiftUtils */,
 				38C0F9E01B66176D00737021 /* SwiftUtilsTests */,
 				38C0F9C91B66176D00737021 /* Products */,
+				981B82140D3440139574D149 /* Pods */,
+				EBFF3DE30628B4B4F7C058F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +100,7 @@
 				38C0F9D41B66176D00737021 /* Images.xcassets */,
 				38C0F9D61B66176D00737021 /* LaunchScreen.xib */,
 				38C0F9CB1B66176D00737021 /* Supporting Files */,
+				3C6150E3F0CF7088EF2F1CE7 /* Common */,
 			);
 			path = SwiftUtils;
 			sourceTree = "<group>";
@@ -112,6 +130,43 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3C6150E3F0CF7088EF2F1CE7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3C615D5859CD287500F75AB8 /* Validation */,
+				3C6159B16E88624ADF5C0366 /* ParseUtils.swift */,
+				3C61534DDC1089763ABD41AE /* ParseBinder.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3C615D5859CD287500F75AB8 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				3C615D6DA5772C11FC441137 /* BaseValidator.swift */,
+				3C615EC0D69EDD2F63968343 /* RegExValidator.swift */,
+				3C615080EDFE74DC418D9C35 /* RequiredValidator.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		981B82140D3440139574D149 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6AB0C861BECB8F4A3AA0870F /* Pods.debug.xcconfig */,
+				03B3B7F2D2E152376D3E716A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EBFF3DE30628B4B4F7C058F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B710A7705944AFB67FEED414 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38C0F9E71B66176D00737021 /* Build configuration list for PBXNativeTarget "SwiftUtils" */;
 			buildPhases = (
+				C0541552E8F04E734D68696A /* Check Pods Manifest.lock */,
 				38C0F9C41B66176D00737021 /* Sources */,
 				38C0F9C51B66176D00737021 /* Frameworks */,
 				38C0F9C61B66176D00737021 /* Resources */,
+				45291F8C2ABCEF0C366D0568 /* Embed Pods Frameworks */,
+				4A599514646DDC521CE3A49E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +265,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		45291F8C2ABCEF0C366D0568 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A599514646DDC521CE3A49E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0541552E8F04E734D68696A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		38C0F9C41B66176D00737021 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -214,6 +320,11 @@
 			files = (
 				38C0F9D01B66176D00737021 /* ViewController.swift in Sources */,
 				38C0F9CE1B66176D00737021 /* AppDelegate.swift in Sources */,
+				3C6159ACAD0807F5F210B4D6 /* BaseValidator.swift in Sources */,
+				3C615EF4A11A3465EF6CFB8D /* RegExValidator.swift in Sources */,
+				3C6158CD13875ECA85E714D9 /* RequiredValidator.swift in Sources */,
+				3C6151A42DC8D201D351B714 /* ParseUtils.swift in Sources */,
+				3C6150D1BE35BD42EE29908D /* ParseBinder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +451,7 @@
 		};
 		38C0F9E81B66176D00737021 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AB0C861BECB8F4A3AA0870F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftUtils/Info.plist;
@@ -350,6 +462,7 @@
 		};
 		38C0F9E91B66176D00737021 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03B3B7F2D2E152376D3E716A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftUtils/Info.plist;
@@ -411,6 +524,7 @@
 				38C0F9E91B66176D00737021 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38C0F9EA1B66176D00737021 /* Build configuration list for PBXNativeTarget "SwiftUtilsTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +533,7 @@
 				38C0F9EC1B66176D00737021 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
