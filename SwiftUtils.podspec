@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.preserve_paths = 'SwiftUtils.framework'
 
-  s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => ''$(PODS_ROOT)/SwiftUtils'' }
+  s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/SwiftUtils' }
 
   s.requires_arc = true
 
