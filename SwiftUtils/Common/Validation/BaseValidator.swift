@@ -6,10 +6,10 @@
 import Foundation
 import UIKit
 
-class BaseValidator {
+public class BaseValidator {
     var errMsg: String;
 
-    public init(errMsg: String) {
+     public init(errMsg: String) {
         self.errMsg = errMsg
     }
 

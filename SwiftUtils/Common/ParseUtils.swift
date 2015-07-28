@@ -14,28 +14,27 @@ import Bolts
 public class ParseUtils {
 
     public init() {
-
+        
     }
+    public func assignUserToRole(newUser: PFUser, role: String) {
 
-    func assignUserToRole(newUser: PFUser, role: String) {
+    log.debug("Assign Role \(role) to User \(newUser.username)")
+    var roleQuery = PFRole.query()
+    roleQuery?.whereKey("name", equalTo: role)
+    roleQuery?.findObjectsInBackgroundWithBlock {
+        (objects: [AnyObject]?, error: NSError?) -> Void in
 
-        log.debug("Assign Role \(role) to User \(newUser.username)")
-        var roleQuery = PFRole.query()
-        roleQuery?.whereKey("name", equalTo: role)
-        roleQuery?.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
+        if let usersToAddToRole = objects {
+            for users in usersToAddToRole {
 
-            if let usersToAddToRole = objects {
-                for users in usersToAddToRole {
-
-                    users.users.addObject(newUser)
-                    users.saveInBackground()
-                }
+                users.users.addObject(newUser)
+                users.saveInBackground()
             }
         }
     }
+}
 
-    func createEntityForUser(company: String) {
+    public func createEntityForUser(company: String) {
 
         var entity = PFObject(className: "Entity")
         entity["entityName"] = company
@@ -59,7 +58,7 @@ public class ParseUtils {
 
     }
 
-    func revertUser(sessionToken: String) {
+    public func revertUser(sessionToken: String) {
 
         PFUser.becomeInBackground(sessionToken, block: {
             (user: PFUser?, error: NSError?) -> Void in

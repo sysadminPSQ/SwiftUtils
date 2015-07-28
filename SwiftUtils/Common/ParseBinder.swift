@@ -14,10 +14,9 @@ import Bolts
 public class ParseBinder {
 
     public init() {
-
+        
     }
-
-    func saveObj(parseObj: PFObject, succFn: () -> Void, failFn: (NSError) -> Void) {
+    public func saveObj(parseObj: PFObject, succFn: () -> Void, failFn: (NSError) -> Void) {
         log.warning("Saving ParseObject \(parseObj)")
         parseObj.saveInBackgroundWithBlock({
             (success: Bool, error: NSError?) -> Void in
@@ -31,7 +30,7 @@ public class ParseBinder {
         })
     }
 
-    func bindToParse(control: UITextField,
+    public func bindToParse(control: UITextField,
                      validators: [BaseValidator],
                      succFn: (UITextField) -> Void,
                      errFn: (UITextField, [String]) -> Void,
@@ -60,7 +59,7 @@ public class ParseBinder {
 
     }
 
-    func bindToUI(control: UIControl, parseObj: PFObject, key: String) {
+    public func bindToUI(control: UIControl, parseObj: PFObject, key: String) {
 
         log.debug("Setting Value \(parseObj[key]) to \(control)")
 
@@ -79,7 +78,7 @@ public class ParseBinder {
 
     }
 
-    func bindToImage(control: UIImageView, parseObj: PFObject, key: String) {
+    public func bindToImage(control: UIImageView, parseObj: PFObject, key: String) {
 
         log.debug("Binding Image \(parseObj[key]) to \(control)")
         let parsevalue: AnyObject? = parseObj[key]
@@ -100,31 +99,31 @@ public class ParseBinder {
 
     }
 
-    func noValidate(control: UITextField) -> (Bool, String?) {
+    public func noValidate(control: UITextField) -> (Bool, String?) {
         return (true, nil)
     }
 
-    func requiredValidator(errMsg: String) -> BaseValidator {
+    public func requiredValidator(errMsg: String) -> BaseValidator {
         return RequiredValidator(errMsg: errMsg)
     }
 
-    func regExValidator(regEx: String, errMsg: String) -> BaseValidator {
+    public func regExValidator(regEx: String, errMsg: String) -> BaseValidator {
         return RegExValidator(errMsg: errMsg, regEx: regEx)
     }
 
-    func redErrMsg(control: UITextField, errMsg: [String]) {
+    public func redErrMsg(control: UITextField, errMsg: [String]) {
         control.layer.borderColor = UIColor.redColor().CGColor
         control.layer.borderWidth = 1.0
     }
 
-    func setToParse(partObj: PFObject, key: String) -> (UITextField) -> Void {
+    public func setToParse(partObj: PFObject, key: String) -> (UITextField) -> Void {
 
         return {
             (control) in partObj[key] = control.text
         }
     }
 
-    func convertAndSetToParse(partObj: PFObject, key: String) -> (UITextField) -> Void {
+    public func convertAndSetToParse(partObj: PFObject, key: String) -> (UITextField) -> Void {
 
         return {
             (control) in partObj[key] = control.text.toInt()
