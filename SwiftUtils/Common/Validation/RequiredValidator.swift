@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import UIKit
 
 class RequiredValidator : BaseValidator {
     override func validate(control: UITextField) -> (Bool, String?){
