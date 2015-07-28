@@ -7,6 +7,10 @@ import Foundation
 import UIKit
 
 class RequiredValidator : BaseValidator {
+
+    public init() {
+
+    }
     override func validate(control: UITextField) -> (Bool, String?){
         return control.text.isEmpty ? (false, errMsg) : (true, nil)
     }

@@ -13,6 +13,10 @@ import Bolts
 
 public class ParseBinder {
 
+    public init() {
+
+    }
+
     func saveObj(parseObj: PFObject, succFn: () -> Void, failFn: (NSError) -> Void) {
         log.warning("Saving ParseObject \(parseObj)")
         parseObj.saveInBackgroundWithBlock({

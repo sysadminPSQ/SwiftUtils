@@ -11,7 +11,11 @@ import UIKit
 import Parse
 import Bolts
 
-class ParseUtils {
+public class ParseUtils {
+
+    public init() {
+
+    }
 
     func assignUserToRole(newUser: PFUser, role: String) {
 

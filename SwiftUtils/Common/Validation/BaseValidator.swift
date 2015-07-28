@@ -9,7 +9,7 @@ import UIKit
 class BaseValidator {
     var errMsg: String;
 
-    init(errMsg: String) {
+    public init(errMsg: String) {
         self.errMsg = errMsg
     }
 

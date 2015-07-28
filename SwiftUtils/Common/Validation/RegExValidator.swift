@@ -8,7 +8,7 @@ import UIKit
 
 class RegExValidator: BaseValidator {
     var regEx: String;
-    init(errMsg: String, regEx: String) {
+    public init(errMsg: String, regEx: String) {
         self.regEx = regEx
         super.init(errMsg: errMsg)
     }
