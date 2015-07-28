@@ -36,6 +36,7 @@ let log = LXLogger(endpoints: [
 
 ])
 
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
