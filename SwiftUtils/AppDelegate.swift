@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import LogKit
+import Parse
+import Bolts
 
 let log = LXLogger(endpoints: [
 
