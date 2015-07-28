@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
 
   s.source_files  = "SwiftUtils", "SwiftUtils/**/*.{swift}"
   
-  s.frameworks = "SystemConfiguration"
+  s.frameworks = "SystemConfiguration", "Parse", "LogKit"
 
-  s.requires_arc = true
+  s.requires_arc = false
 
 end
