@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		386BC9A21B6F59BD00EF0B66 /* LogKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BC9A11B6F59BD00EF0B66 /* LogKit.swift */; };
 		38C0F9CE1B66176D00737021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0F9CD1B66176D00737021 /* AppDelegate.swift */; };
 		38C0F9D01B66176D00737021 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0F9CF1B66176D00737021 /* ViewController.swift */; };
 		38C0F9D31B66176D00737021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C0F9D11B66176D00737021 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		03B3B7F2D2E152376D3E716A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		386BC9A11B6F59BD00EF0B66 /* LogKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogKit.swift; sourceTree = "<group>"; };
 		38C0F9C81B66176D00737021 /* SwiftUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C0F9CC1B66176D00737021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38C0F9CD1B66176D00737021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				38C0F9CD1B66176D00737021 /* AppDelegate.swift */,
+				386BC9A11B6F59BD00EF0B66 /* LogKit.swift */,
 				38C0F9CF1B66176D00737021 /* ViewController.swift */,
 				38C0F9D11B66176D00737021 /* Main.storyboard */,
 				38C0F9D41B66176D00737021 /* Images.xcassets */,
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38C0F9D01B66176D00737021 /* ViewController.swift in Sources */,
+				386BC9A21B6F59BD00EF0B66 /* LogKit.swift in Sources */,
 				38C0F9CE1B66176D00737021 /* AppDelegate.swift in Sources */,
 				3C6159ACAD0807F5F210B4D6 /* BaseValidator.swift in Sources */,
 				3C615EF4A11A3465EF6CFB8D /* RegExValidator.swift in Sources */,
