@@ -114,6 +114,7 @@ public class ParseBinder {
     public func redErrMsg(control: UITextField, errMsg: [String]) {
         control.layer.borderColor = UIColor.redColor().CGColor
         control.layer.borderWidth = 1.0
+        control.layer.cornerRadius = 5.0
     }
 
     public func setToParse(partObj: PFObject, key: String) -> (UITextField) -> Void {
