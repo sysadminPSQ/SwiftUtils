@@ -11,7 +11,6 @@ Pod::Spec.new do |s|
   s.source_files  = 'SwiftUtils', 'SwiftUtils/**/*.{swift}'
   s.frameworks = 'SystemConfiguration', 'UIKit'
   s.dependency 'Parse'
-  s.dependency 'LogKit'
   s.preserve_paths = 'SwiftUtils.framework'
   s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/SwiftUtils' }
   s.requires_arc = true

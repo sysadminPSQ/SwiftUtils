@@ -1,16 +1,13 @@
 PODS:
   - Bolts/Tasks (1.2.0)
-  - LogKit (1.0.4)
   - Parse (1.7.5.3):
     - Bolts/Tasks (>= 1.2.0)
 
 DEPENDENCIES:
-  - LogKit (~> 1.0)
   - Parse
 
 SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
-  LogKit: f785d7b331fd923a970c0970d49b009e8495cb7a
   Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
 
-COCOAPODS: 0.38.1
+COCOAPODS: 0.38.2
