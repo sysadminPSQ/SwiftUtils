@@ -112,6 +112,16 @@ public class ParseBinder {
     }
 
     public func redErrMsg(control: UITextField, errMsg: [String]) {
+        
+        //Shake animation if wrong values are entered in the textfields
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 2
+        animation.autoreverses = true
+        animation.fromValue = NSValue(CGPoint: CGPointMake(control.center.x - 10, control.center.y))
+        animation.toValue = NSValue(CGPoint: CGPointMake(control.center.x + 10, control.center.y))
+        control.layer.addAnimation(animation, forKey: "position")
+        
         control.layer.borderColor = UIColor.redColor().CGColor
         control.layer.borderWidth = 1.0
         control.layer.cornerRadius = 5.0
@@ -121,6 +131,9 @@ public class ParseBinder {
 
         return {
             (control) in partObj[key] = control.text
+            control.layer.borderColor = UIColor.clearColor().CGColor
+            control.layer.borderWidth = 0.0
+            control.layer.cornerRadius = 0.0
         }
     }
 
@@ -128,6 +141,9 @@ public class ParseBinder {
 
         return {
             (control) in partObj[key] = control.text.toInt()
+            control.layer.borderColor = UIColor.clearColor().CGColor
+            control.layer.borderWidth = 0.0
+            control.layer.cornerRadius = 0.0
         }
     }
 
