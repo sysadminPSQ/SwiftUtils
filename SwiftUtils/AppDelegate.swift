@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import LogKit
 import Parse
 import Bolts
 

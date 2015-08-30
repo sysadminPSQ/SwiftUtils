@@ -146,5 +146,15 @@ public class ParseBinder {
             control.layer.cornerRadius = 0.0
         }
     }
+    public func convertToArray(parseObj: PFObject, key: String) -> (UITextField) -> Void {
+        
+        return {
+            
+            (control) in parseObj[key] = [control.text]
+            control.layer.borderColor = UIColor.clearColor().CGColor
+            control.layer.borderWidth = 0.0
+            control.layer.cornerRadius = 0.0
+        }
+    }
 
 }
