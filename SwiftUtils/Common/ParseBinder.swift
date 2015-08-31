@@ -150,7 +150,8 @@ public class ParseBinder {
         
         return {
             
-            (control) in parseObj[key] = [control.text]
+            (control) in
+            parseObj[key].append(control.text)
             control.layer.borderColor = UIColor.clearColor().CGColor
             control.layer.borderWidth = 0.0
             control.layer.cornerRadius = 0.0
