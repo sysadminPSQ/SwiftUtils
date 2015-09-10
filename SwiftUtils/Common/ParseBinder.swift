@@ -164,9 +164,7 @@ public class ParseBinder {
 }
 
 public class SubClassedPFObjects: PFObject {
-    
-    
-    
+   
     public func addValue(key: String, value: Any){
         
     }
