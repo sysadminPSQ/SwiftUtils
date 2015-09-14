@@ -140,7 +140,7 @@ public class ParseBinder {
     public func convertAndSetToParse(partObj: PFObject, key: String) -> (UITextField) -> Void {
         
         return {
-            (control) in partObj[key] = control.text.toInt()
+            (control) in partObj[key] = control.text.toInt()!
             control.layer.borderColor = UIColor.clearColor().CGColor
             control.layer.borderWidth = 0.0
             control.layer.cornerRadius = 0.0
@@ -164,8 +164,11 @@ public class ParseBinder {
 }
 
 public class SubClassedPFObjects: PFObject {
-   
+    
     public func addValue(key: String, value: Any){
         
+    }
+    public func hasErrors() -> Bool {
+        return false
     }
 }
