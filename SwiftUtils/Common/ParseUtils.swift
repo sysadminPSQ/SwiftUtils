@@ -38,7 +38,7 @@ public class ParseUtils {
 
         var entity = PFObject(className: "Entity")
         entity["entityName"] = company
-        entity["createdBy"] = PFUser.currentUser()
+        entity["createdBy"] = PFUser.currentUser()!
         entity.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
 
