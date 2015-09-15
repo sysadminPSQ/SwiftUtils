@@ -17,6 +17,7 @@ public class ParseBinder {
         
     }
     public func saveObj(parseObj: PFObject, succFn: () -> Void, failFn: (NSError) -> Void) {
+        
         log.warning("Saving ParseObject \(parseObj)")
         parseObj.saveInBackgroundWithBlock({
             (success: Bool, error: NSError?) -> Void in
@@ -131,6 +132,7 @@ public class ParseBinder {
         
         return {
             (control) in partObj[key] = control.text
+            println("The value recieved during bindToParse is : \(control.text)")
             control.layer.borderColor = UIColor.clearColor().CGColor
             control.layer.borderWidth = 0.0
             control.layer.cornerRadius = 0.0
@@ -154,12 +156,12 @@ public class ParseBinder {
             (control) in
             
             (partObj as! SubClassedPFObjects).addValue(key, value: control.text)
+            println("The value recieved during convertToArray is : \(control.text) and the parse Object is \(partObj)" )
             control.layer.borderColor = UIColor.clearColor().CGColor
             control.layer.borderWidth = 0.0
             control.layer.cornerRadius = 0.0
         }
     }
-    
     
 }
 
