@@ -18,8 +18,8 @@ public class ParseUtils {
     }
     public func assignUserToRole(newUser: PFUser, role: String) {
         
-        log.debug("Assign Role \(role) to User \(newUser.username)")
-        var roleQuery = PFRole.query()
+        print("Assign Role \(role) to User \(newUser.username)")
+        let roleQuery = PFRole.query()
         roleQuery?.whereKey("name", equalTo: role)
         roleQuery?.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
@@ -36,7 +36,7 @@ public class ParseUtils {
     
     public func createEntityForUser(company: String) {
         
-        var entity = PFObject(className: "Entity")
+        let entity = PFObject(className: "Entity")
         entity["entityName"] = company
         entity["createdBy"] = PFUser.currentUser()!
         entity.saveInBackgroundWithBlock {
@@ -44,15 +44,15 @@ public class ParseUtils {
             
             if success {
                 
-                println("Entity created successfully")
+                print("Entity created successfully")
                 
-                var updateUser = PFUser.currentUser()
+                let updateUser = PFUser.currentUser()
                 updateUser?.setObject(updateUser!, forKey: "createdBy")
                 updateUser?.setObject(entity, forKey: "entityId")
                 updateUser?.saveInBackground()
                 
             } else {
-                println("\(error?.userInfo)")
+                print("\(error?.userInfo)")
             }
         }
         
@@ -65,7 +65,7 @@ public class ParseUtils {
             if error != nil {
                 // The token could not be validated.
             } else {
-                println("\(error?.userInfo)")
+                print("\(error?.userInfo)")
             }
         })
     }

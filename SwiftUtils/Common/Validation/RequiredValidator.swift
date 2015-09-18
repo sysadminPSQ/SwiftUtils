@@ -9,7 +9,7 @@ import UIKit
 public class RequiredValidator : BaseValidator {
 
     override func validate(control: UITextField) -> (Bool, String?){
-        return control.text.isEmpty ? (false, errMsg) : (true, nil)
+        return control.text!.isEmpty ? (false, errMsg) : (true, nil)
     }
     override func name() -> String{
         return "RequiredValidator"

@@ -18,14 +18,14 @@ public class ParseBinder {
     }
     public func saveObj(parseObj: PFObject, succFn: () -> Void, failFn: (NSError) -> Void) {
         
-        log.warning("Saving ParseObject \(parseObj)")
+        print("Saving ParseObject \(parseObj)")
         parseObj.saveInBackgroundWithBlock({
             (success: Bool, error: NSError?) -> Void in
             
             if error == nil {
                 succFn()
             } else {
-                log.warning("saveObj: saving \(parseObj) failed", userInfo: ["error": error!])
+                print("saveObj: saving \(parseObj) failed, userInfo: \([error!])")
                 failFn(error!)
             }
         })
@@ -44,7 +44,7 @@ public class ParseBinder {
             for validator in validators {
                 let (s, err) = validator.validate(control)
                 if (!s) {
-                    log.warning("BindToParse: control\(control) validation failed for \(validator.name())")
+                    print("BindToParse: control\(control) validation failed for \(validator.name())")
                     status = false
                     errMsg.append(err!)
                     break
@@ -62,7 +62,7 @@ public class ParseBinder {
     
     public func bindToUI(control: UIControl, parseObj: PFObject, key: String) {
         
-        log.debug("Setting Value \(parseObj[key]) to \(control)")
+        print("Setting Value \(parseObj[key]) to \(control)")
         
         let parsevalue: AnyObject? = parseObj[key]
         
@@ -74,14 +74,14 @@ public class ParseBinder {
             
             (control as! UITextField).text = String(parsevalue as! Int)
         } else {
-            (control as! UITextField).text = parseObj[key] as! String
+            (control as! UITextField).text = parseObj[key] as? String
         }
         
     }
     
     public func bindToImage(control: UIImageView, parseObj: PFObject, key: String) {
         
-        log.debug("Binding Image \(parseObj[key]) to \(control)")
+        print("Binding Image \(parseObj[key]) to \(control)")
         let parsevalue: AnyObject? = parseObj[key]
         
         if parsevalue is PFFile {
@@ -93,7 +93,7 @@ public class ParseBinder {
                     let image = UIImage(data: imageData!)
                     control.image = image
                 } else {
-                    log.error("Binding Image \(parseObj[key]) to \(control) Failed", userInfo: ["error": error!])
+                    print("Binding Image \(parseObj[key]) to \(control) Failed, userInfo:  \([error!])")
                 }
             }
         }
@@ -132,7 +132,7 @@ public class ParseBinder {
         
         return {
             (control) in partObj[key] = control.text
-            println("The value recieved during bindToParse is : \(control.text)")
+            print("The value recieved during bindToParse is : \(control.text)")
             control.layer.borderColor = UIColor.clearColor().CGColor
             control.layer.borderWidth = 0.0
             control.layer.cornerRadius = 0.0
@@ -142,7 +142,7 @@ public class ParseBinder {
     public func convertAndSetToParse(partObj: PFObject, key: String) -> (UITextField) -> Void {
         
         return {
-            (control) in partObj[key] = control.text.toInt()!
+            (control) in partObj[key] = Int(control.text!)
             control.layer.borderColor = UIColor.clearColor().CGColor
             control.layer.borderWidth = 0.0
             control.layer.cornerRadius = 0.0
@@ -156,7 +156,7 @@ public class ParseBinder {
             (control) in
             
             (partObj as! SubClassedPFObjects).addValue(key, value: control.text)
-            println("The value recieved during convertToArray is : \(control.text) and the parse Object is \(partObj)" )
+            print("The value recieved during convertToArray is : \(control.text) and the parse Object is \(partObj)" )
             control.layer.borderColor = UIColor.clearColor().CGColor
             control.layer.borderWidth = 0.0
             control.layer.cornerRadius = 0.0

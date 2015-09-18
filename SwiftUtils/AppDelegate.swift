@@ -11,32 +11,6 @@ import CoreData
 import Parse
 import Bolts
 
-let log = LXLogger(endpoints: [
-
-        LXLogSerialConsoleEndpoint(
-        dateFormatter: {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "HH':'mm':'ss'.'SSS"
-            dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
-            return dateFormatter
-        }(),
-                entryFormatter: { entry in
-                    return "\(entry.dateTime) [\(entry.logLevel.uppercaseString)] \(entry.message)"
-                }
-        ),
-
-        LXLogFileEndpoint(
-        fileURL: (NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask) as? [NSURL])?.first?
-        .URLByAppendingPathComponent("logs", isDirectory: true)
-        .URLByAppendingPathComponent("log.txt"),
-                minimumLogLevel: .Notice,
-                entryFormatter: { entry in
-                    return "\(entry.dateTime) (\(entry.timestamp)) [\(entry.logLevel.uppercaseString)] {thread: \(entry.threadID) '\(entry.threadName)' main: \(entry.isMainThread)} \(entry.functionName) <\(entry.fileName):\(entry.lineNumber).\(entry.columnNumber)> \(entry.message)"
-                }
-        ),
-
-])
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
