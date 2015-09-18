@@ -18,14 +18,14 @@ public class ParseBinder {
     }
     public func saveObj(parseObj: PFObject, succFn: () -> Void, failFn: (NSError) -> Void) {
         
-        print("Saving ParseObject \(parseObj)")
+        print("Saving ParseObject \(parseObj)", terminator: "")
         parseObj.saveInBackgroundWithBlock({
             (success: Bool, error: NSError?) -> Void in
             
             if error == nil {
                 succFn()
             } else {
-                print("saveObj: saving \(parseObj) failed, userInfo: \([error!])")
+                print("saveObj: saving \(parseObj) failed, userInfo: \([error!])", terminator: "")
                 failFn(error!)
             }
         })
@@ -44,7 +44,7 @@ public class ParseBinder {
             for validator in validators {
                 let (s, err) = validator.validate(control)
                 if (!s) {
-                    print("BindToParse: control\(control) validation failed for \(validator.name())")
+                    print("BindToParse: control\(control) validation failed for \(validator.name())", terminator: "")
                     status = false
                     errMsg.append(err!)
                     break
@@ -62,7 +62,7 @@ public class ParseBinder {
     
     public func bindToUI(control: UIControl, parseObj: PFObject, key: String) {
         
-        print("Setting Value \(parseObj[key]) to \(control)")
+        print("Setting Value \(parseObj[key]) to \(control)", terminator: "")
         
         let parsevalue: AnyObject? = parseObj[key]
         
@@ -81,7 +81,7 @@ public class ParseBinder {
     
     public func bindToImage(control: UIImageView, parseObj: PFObject, key: String) {
         
-        print("Binding Image \(parseObj[key]) to \(control)")
+        print("Binding Image \(parseObj[key]) to \(control)", terminator: "")
         let parsevalue: AnyObject? = parseObj[key]
         
         if parsevalue is PFFile {
@@ -93,7 +93,7 @@ public class ParseBinder {
                     let image = UIImage(data: imageData!)
                     control.image = image
                 } else {
-                    print("Binding Image \(parseObj[key]) to \(control) Failed, userInfo:  \([error!])")
+                    print("Binding Image \(parseObj[key]) to \(control) Failed, userInfo:  \([error!])", terminator: "")
                 }
             }
         }
@@ -132,7 +132,7 @@ public class ParseBinder {
         
         return {
             (control) in partObj[key] = control.text
-            print("The value recieved during bindToParse is : \(control.text)")
+            print("The value recieved during bindToParse is : \(control.text)", terminator: "")
             control.layer.borderColor = UIColor.clearColor().CGColor
             control.layer.borderWidth = 0.0
             control.layer.cornerRadius = 0.0
@@ -156,7 +156,7 @@ public class ParseBinder {
             (control) in
             
             (partObj as! SubClassedPFObjects).addValue(key, value: control.text)
-            print("The value recieved during convertToArray is : \(control.text) and the parse Object is \(partObj)" )
+            print("The value recieved during convertToArray is : \(control.text) and the parse Object is \(partObj)", terminator: "" )
             control.layer.borderColor = UIColor.clearColor().CGColor
             control.layer.borderWidth = 0.0
             control.layer.cornerRadius = 0.0

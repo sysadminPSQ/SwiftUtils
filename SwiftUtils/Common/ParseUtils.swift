@@ -18,7 +18,7 @@ public class ParseUtils {
     }
     public func assignUserToRole(newUser: PFUser, role: String) {
         
-        print("Assign Role \(role) to User \(newUser.username)")
+        print("Assign Role \(role) to User \(newUser.username)", terminator: "")
         let roleQuery = PFRole.query()
         roleQuery?.whereKey("name", equalTo: role)
         roleQuery?.findObjectsInBackgroundWithBlock {
@@ -44,7 +44,7 @@ public class ParseUtils {
             
             if success {
                 
-                print("Entity created successfully")
+                print("Entity created successfully", terminator: "")
                 
                 let updateUser = PFUser.currentUser()
                 updateUser?.setObject(updateUser!, forKey: "createdBy")
@@ -52,7 +52,7 @@ public class ParseUtils {
                 updateUser?.saveInBackground()
                 
             } else {
-                print("\(error?.userInfo)")
+                print("\(error?.userInfo)", terminator: "")
             }
         }
         
@@ -65,7 +65,7 @@ public class ParseUtils {
             if error != nil {
                 // The token could not be validated.
             } else {
-                print("\(error?.userInfo)")
+                print("\(error?.userInfo)", terminator: "")
             }
         })
     }
