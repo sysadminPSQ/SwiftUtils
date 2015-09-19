@@ -13,25 +13,23 @@ import Bolts
 
 public class ParseUtils {
     
-    public init() {
-        
-    }
     public func assignUserToRole(newUser: PFUser, role: String) {
         
-        print("Assign Role \(role) to User \(newUser.username)", terminator: "")
-        let roleQuery = PFRole.query()
-        roleQuery?.whereKey("name", equalTo: role)
-        roleQuery?.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
-            
-            if let usersToAddToRole = objects {
-                for users in usersToAddToRole {
-                    
-                    users.users.addObject(newUser)
-                    users.saveInBackground()
-                }
-            }
-        }
+        //TODO: Change to Swift 2.0
+        //print("Assign Role \(role) to User \(newUser.username)", terminator: "")
+        //        let roleQuery = PFRole.query()
+        //        roleQuery?.whereKey("name", equalTo: role)
+        //        roleQuery?.findObjectsInBackgroundWithBlock {
+        //            (objects: [AnyObject]?, error: NSError?) -> Void in
+        //
+        //            if let usersToAddToRole = objects {
+        //                for users in usersToAddToRole {
+        //
+        //                    users.users.addObject(newUser)
+        //                    users.saveInBackground()
+        //                }
+        //            }
+        //        }
     }
     
     public func createEntityForUser(company: String) {
