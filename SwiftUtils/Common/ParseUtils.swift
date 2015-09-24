@@ -13,6 +13,9 @@ import Bolts
 
 public class ParseUtils {
     
+    public init() {
+        
+    }
     public func assignUserToRole(newUser: PFUser, role: String) {
         
         //TODO: Change to Swift 2.0
@@ -32,12 +35,12 @@ public class ParseUtils {
         //        }
     }
     
-    public func createEntityForUser(company: String) {
+    public func createEntityForUser(hotelName: String) {
         
-        let entity = PFObject(className: "Entity")
-        entity["entityName"] = company
-        entity["createdBy"] = PFUser.currentUser()!
-        entity.saveInBackgroundWithBlock {
+        let hotel = PFObject(className: "Hotel")
+        hotel["name"] = hotelName
+        hotel["owner"] = PFUser.currentUser()!
+        hotel.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             
             if success {
@@ -46,7 +49,7 @@ public class ParseUtils {
                 
                 let updateUser = PFUser.currentUser()
                 updateUser?.setObject(updateUser!, forKey: "createdBy")
-                updateUser?.setObject(entity, forKey: "entityId")
+                updateUser?.setObject(hotel, forKey: "hotelID")
                 updateUser?.saveInBackground()
                 
             } else {
